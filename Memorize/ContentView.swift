@@ -10,37 +10,22 @@ import SwiftData
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
-    }
-}
-
-struct ContentView_1: View {
-    @State private var buttonText = ""
-    
-    var body : some View {
-        VStack{
-            Text(buttonText)
-                .padding()
-            
-            Button(action: {
-                buttonText = "Button Tapped!"
-            }) {
-                Text("Click on me!!")
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(8)
-            }
-        }
+        return ZStack(content: {
+            RoundedRectangle(cornerRadius: 90.0).fill(Color.indigo)
+            RoundedRectangle(cornerRadius: 90.0).stroke(lineWidth: 3)
+            Text("👻")
+        })
+            .padding()
+            .foregroundColor(Color.black)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView_1()
-        
+       ContentView()
     }
     
 }
+
 
 
